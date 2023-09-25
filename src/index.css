@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'Louis George';
+  src: url('./assets/fonts/louis-George/Louis-George-Cafe.ttf');
+}
+
+@font-face {
+  font-family: 'Louis George Bold';
+  src: url('./assets/fonts/louis-George/Louis\ George-Cafe-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Louis George Light';
+  src: url('./assets/fonts/louis-George/Louis-George-Cafe-Light.ttf');
+}
+
+:root {
+  font-family: Louis George, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #2a2a2a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 4.2em;
+  line-height: 2;
+}
+
+p {
+  font-size: 1.6em;
+  line-height: 1.3;
+  padding: 10px;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: #FCF7FF;
+  background-color: #E6BA0E;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #1a1a1a;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
