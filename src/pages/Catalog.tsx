@@ -1,31 +1,25 @@
-import Movie from '../components/Movie'
-import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
+import Header from '../components/Header'
+import Movie from '../components/Movie'
 
-export const Catalog = () => {
-const url = 'https://api.themoviedb.org/3/configuration';
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer 2d2fa9874d990d307f10548bbf4393c3'
-  }
-};
+const Catalog = () => {
 
-fetch(url, options)
-  .then((res: { json: () => void; }) => res.json())
-  .then((json) => console.log(json))
-  .catch((err: string) => console.error('error:' + err));
-
-
-
+    
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZDJmYTk4NzRkOTkwZDMwN2YxMDU0OGJiZjQzOTNjMyIsInN1YiI6IjY1MDRmYjhmMzczYWMyMDBhY2Q1YWY3MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WTca_n5sjLfwcPckpgAF6mV2cEtNJFQ1vP-6FeyBKwk'
+        }
+    };
+    fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
+    .then((res: { json: () => void; }) => res.json())
+    .then((data) => console.log(data))
+    .catch((err: string) => console.error('error:' + err));
 
     return (
         <>
-        <header>
-        <img src={logo} />
-        <p>Movie Box</p>
-        </header>
+        <Header brand='Muvie Box'/>
         <nav className='Menu'>
             <div className='Menu-Form'>
                 <i className='Search'></i>
@@ -39,7 +33,7 @@ fetch(url, options)
             </ul>
         </nav>
         <main className='Main'>
-            <Movie />
+            {/* <Movie /> */}
         </main>
         </>
     )

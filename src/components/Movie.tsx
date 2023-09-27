@@ -1,20 +1,23 @@
-const Movie = () => {
+//import { Movies } from '../pages/Catalog'
+
+const Movie = ({title, poster_path}: Movies) => {
+    const ImagesApi = "https://image.tmdb.org/t/p/w1280";
     return (
         <>
-        <section className='Main-container'>
-        <div className='Main-Message__error'>error</div>
+        {/* <div className='Main-Message__error'>error</div> */}
         <div className='Main-container__movie'>
             <a href=''>
                 <span>
                     <img
-                    src=''
-                    alt=''
+                    src={ImagesApi + poster_path}
+                    alt={title}
                     />
-                    <p>Nombredelapelicula</p>
                 </span>
             </a>
+            <div className="Main-container__movie-info">
+                <h3>{title}</h3>
+            </div>
         </div>
-    </section>
     </>
     )
 }
