@@ -1,4 +1,4 @@
-//import { Movies } from '../pages/Catalog'
+import { Movies } from '../pages/Catalog'
 
 const Movie = ({title, poster_path}: Movies) => {
     const ImagesApi = "https://image.tmdb.org/t/p/w1280";

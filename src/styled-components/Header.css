@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  margin: 0 ;
+  padding: 0;
+}
+
+.header{
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.header-container {
+  display: flex;
+  width: inherit;
+  height: 75px;
+
+}
+
+.header-container{
+  width: 90%;
+  position: relative;
+  display: flex;
+  margin: auto;
+  line-height: 75px;
+}
+
+img{
+  width: 5rem;
+  height:auto;
+}
+
+.header-brand{
+  line-height: 80px;
+  width: 162px;
+  text-align: center;
+  padding: 0 0 0 0.3em;
+}
+
+.Menu {
+  display: none;
+}

@@ -19,7 +19,7 @@ const API = async () => {
             }
 
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const data: { [key: string]: any }  = await response.json();
+            const data: { [key: string]: any } = await response.json();
             return data.results
             //console.log(response)
 
