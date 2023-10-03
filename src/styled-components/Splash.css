@@ -1,19 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-}
 
 .logo {
     height: 12em;
     padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
 }
 
 .logo:hover {
@@ -44,15 +34,6 @@ filter: drop-shadow(0 0 2em #8c7415aa);
     font-size: 1.5em;
     font-weight: 600;
     width: 200px;
-}
-
-a {
-    color: #FCF7FF;
-    text-decoration: none;
-}
-
-.read-the-docs {
-    color: #888;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

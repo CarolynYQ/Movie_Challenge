@@ -14,8 +14,10 @@ const SeachBar: React.FC<Props> = () => {
   return (
     <>
       <div className='Menu-Form'>
+        <form id='Form'>
         <input className='Menu-Form__search' id='Search' placeholder='Search movies or series' typeof='search' onChange={handleChange}></input>
         <button className='Search-Button' type='submit'><img className='Search-Icon' src="src/assets/icon_search.svg"/></button>
+        </form>
       </div>
     </>
   )

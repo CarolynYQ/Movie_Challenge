@@ -62,19 +62,17 @@ p {
 .Menu-Form {
   display: flex;
   justify-content: center;
-}
-.Menu-Form:focus {
-  outline: #E6BA0E solid .5px;
+  position: relative;
+  margin: .5rem 0;
 }
 
 input {
   width: 320px;
   padding: .8rem 1.43rem;
   margin: 8px 0;
-  position: relative;
   font-size: 18px;
   border: none;
-  border-radius: 1.5rem 0 0 1.5rem;
+  border-radius: 1.5rem;
   color: #cccccc;
   background-color: #474747;
 }
@@ -84,6 +82,9 @@ input::placeholder {
   color: #8C8B8B;
 }
 
+input:focus {
+  outline: #E6BA0E solid .5px;
+}
 
 button {
   border-radius: 8px;
@@ -103,16 +104,61 @@ button:hover {
 }
 
 .Search-Button {
-  padding: .8rem 1.43rem;
-  margin: 8px 0;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
   cursor: pointer;
   background-color: #474747;
+  right: 100px;
+  top: 50%;
+  transform: translateY(-50%);
   border: none;
-  border-radius: 0 1.5rem 1.5rem 0;
-  font-size: .5rem;
 }
 
 .Search-Icon {
-  width: 20px;
-  color: #606060;
+  width: 25px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  input {
+    width: 480px;
+  }
+
+  .Search-Button {
+    right: 0;
+    left: 417px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  input {
+    width: 480px;
+  }
+
+  .Search-Button {
+    right: 0;
+    left: 417px;
+  }
 }

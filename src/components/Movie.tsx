@@ -1,7 +1,7 @@
 import { Movies } from '../pages/Catalog'
 
 const Movie = ({title, poster_path}: Movies) => {
-    const ImagesApi = "https://image.tmdb.org/t/p/w1280";
+    const ImagesApi = "https://image.tmdb.org/t/p/w500";
     return (
         <>
         {/* <div className='Main-Message__error'>error</div> */}
