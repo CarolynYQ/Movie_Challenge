@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { DataProvider } from './context/DataContext.tsx';
 import Splash from './pages/Splash.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import Catalog from './pages/Catalog.tsx';
@@ -21,11 +20,7 @@ function App() {
   ]);
 
   return (
-    <>
-      <DataProvider>
-        <RouterProvider router={router} />
-      </DataProvider>
-    </>
+    <RouterProvider router={router} />
   )
 }
 

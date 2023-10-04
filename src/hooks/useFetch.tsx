@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Movie } from '../components/ElementCatalog';
 
-// const API_KEY = '2d2fa9874d990d307f10548bbf4393c3';
-// const API_ENDPOINT = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&language=en-US`
+/*-------------------------------------------another way---------------------------------------------------------------*/ 
+// const API_KEY = '2d2fa9874d990d307f10548bbf4393c3';                                                                 //
+// const API_ENDPOINT = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&language=en-US`            //
+/*---------------------------------------------------------------------------------------------------------------------*/ 
 const URL_INIT = `https://api.themoviedb.org/3/`;
-const TRENDING_MOVIES = 'trending/movie/day?language=en-US';
-const SEARCH = 'search/multi?language=en-US&page=1';
-const SEARCH_MOVIE = 'search/movie?query=barbie';
+export const TRENDING_MOVIES = 'trending/movie/day?language=en-US';
+export const SEARCH_MOVIE = 'search/movie?query=';
 const OPTIONS = {
   method: 'GET',
   headers: {
@@ -18,7 +19,6 @@ const OPTIONS = {
 
 export const useFetch = (params: string) => {
   const [data, setData] = useState<Movie[]>([]);
-  const [error, setError] = useState(false);
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(true);
 
@@ -27,14 +27,10 @@ export const useFetch = (params: string) => {
     fetch(url, options)
       .then((res) => res.json())
       .then((data) => {
-        if (data.results.length !== 0) {
-          setData(data.results);
-          setError(false);
-        } else {
-          setError(true);
+        setData(data.results);
+        if (data.results.length === 0) {
           setMessage('There are no movies that matched your query');
         }
-        console.log(data);
       })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
@@ -44,10 +40,6 @@ export const useFetch = (params: string) => {
     fetchMovies(`${URL_INIT}${params}`, OPTIONS);
   }, [params]);
 
-  // useEffect(() => {
-  //     console.log(data)
-  // }, [data])
-
-  return { loading, error, message, data };
+  return { loading, message, data };
 };
 
