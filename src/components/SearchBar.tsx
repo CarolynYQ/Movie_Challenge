@@ -1,31 +1,24 @@
-import { FormEvent, useState, useContext } from 'react'
-import { useFetch } from '../hooks/useFetch';
-import { DataContext } from '../context/DataContext';
+import { FormEvent } from 'react'
 
+interface Props {
+  onTriggerSearch: () => void;
+  onSearchChange: (e: string) => void
+}
 
-// interface Props {
-//   handleChange: (e: string) => void
-// }
+const SearchBar: React.FC<Props>= ({onTriggerSearch, onSearchChange}) => {
 
-const SearchBar/*: React.FC<Props> */= () => {
-
-  const [searchText, setSearchText] = useState('');
-  const { setQuery, error } = useContext(DataContext)
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    //const valueText = e.target.value;
-    setQuery(searchText);
-    console.log(searchText)
+    onTriggerSearch();
   }
-
 
     
   return (
     <>
       <div className='Menu-Form'>
         <form id='Form' onSubmit={ handleSubmit }>
-        <input className='Menu-Form__search' id='Search' placeholder='Search movies or series' typeof='search' value={searchText} onChange={e => setSearchText(e.target.value)}></input>
+        <input className='Menu-Form__search' id='Search' placeholder='Search movies or series' typeof='search' onChange={e => onSearchChange(e.target.value)}></input>
         <button className='Search-Button' type='submit'><img className='Search-Icon' src="src/assets/icon_search.svg"/></button>
         </form>
       </div>

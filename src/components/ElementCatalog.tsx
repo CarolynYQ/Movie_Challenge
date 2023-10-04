@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 export interface Movie {
     id?: number;
-    title: string;
+    original_title: string;
     poster_path: string;
     overview: string;
     vote_average: number;
@@ -22,12 +22,12 @@ const ElementCatalog: FC<Props> = ({data}) => {
                 <span>
                     <img
                     src={ImagesApi + data.poster_path}
-                    alt={data.title}
+                    alt={data.original_title}
                     />
                 </span>
             </a>
             <div className="Main-container__movie-info">
-                <h3>{data.title}</h3>
+                <h3>{data.original_title}</h3>
             </div>
         </div>
     </>
