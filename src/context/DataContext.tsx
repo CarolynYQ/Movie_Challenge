@@ -2,7 +2,7 @@ import { useState, createContext, FC } from 'react';
 import { useFetch } from '../hooks/useFetch';
 
 interface Props {
-  children: string;
+  children: React.ReactElement;
 }
 
 export const DataContext = createContext();
