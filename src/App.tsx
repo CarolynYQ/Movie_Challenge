@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Splash from './pages/Splash.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import Catalog from './pages/Catalog.tsx';
+import ItemMovie from './pages/Catalog.tsx';
 import './styled-components/Splash.css';
 
 
@@ -15,7 +16,12 @@ function App() {
     {
       path: '/catalog',
       element: <Catalog />,
-      children: [],
+      children: [
+        {
+          path: ':movieId',
+          element: <ItemMovie />,
+        },
+      ],
     },
   ]);
 

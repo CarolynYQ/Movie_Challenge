@@ -15,7 +15,9 @@ const Catalog = () => {
                 <SearchBar onTriggerSearch={() => setSearchParams(`${SEARCH_MOVIE}${searchText}`)} 
                 onSearchChange={(text) => { setSearchText(text)
                     if(text === '') {
-                    setSearchParams(TRENDING_MOVIES)
+                        setTimeout(() => {
+                            setSearchParams(TRENDING_MOVIES);
+                        }, 2000);
                 }}}/>
                 <main className='Main'>
                 {/* {loading && <p>'Loading...'</p>} */}
