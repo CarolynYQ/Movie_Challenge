@@ -1,11 +1,15 @@
 import { FC } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import DefaultImage from './../assets/NoImage.png'
 
 export interface Movie {
-    id?: number;
+    id: number;
     original_title: string;
     poster_path: string;
     overview: string;
     vote_average: number;
+    release_date: string;
+    genre_ids: string[];
 }
 
 interface Props {
@@ -13,23 +17,28 @@ interface Props {
 }
 
 const ElementCatalog: FC<Props> = ({data}) => {
-    const ImagesApi = "https://image.tmdb.org/t/p/w500";
+    const navigate = useNavigate();
+    const viewItem = () => {
+        navigate(`/catalog/${data.id}`, { state: data })
+    }
+    const IMAGE_API = "https://image.tmdb.org/t/p/w500";
+    const cover = data.poster_path === null ? DefaultImage : IMAGE_API + data.poster_path;
     return (
         <>
-        {/* <div className='Main-Message__error'>error</div> */}
+        <Link to={`${data.id}`}>
         <div className='Main-container__movie'>
-            <a href=''>
-                <span>
-                    <img
-                    src={ImagesApi + data.poster_path}
-                    alt={data.original_title}
-                    />
-                </span>
-            </a>
+            <span>
+                <img
+                className='Main-container__poster'
+                src={cover}
+                alt={data.original_title}
+                />
+            </span>
             <div className="Main-container__movie-info">
                 <h3>{data.original_title}</h3>
             </div>
         </div>
+        </Link>
     </>
     )
 }

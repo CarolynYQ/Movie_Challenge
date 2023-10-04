@@ -124,6 +124,15 @@ button:hover {
   width: 25px;
 }
 
+a {
+  color: #FCF7FF;
+  text-decoration: none;
+}
+
+.Main-container__poster{
+  width: 500px;
+  height: auto;
+}
 @media (min-width: 768px) and (max-width: 1024px) {
   #root {
     display: flex;
