@@ -1,6 +1,18 @@
-import { Movies } from '../pages/Catalog'
+import { FC } from 'react';
 
-const Movie = ({title, poster_path}: Movies) => {
+export interface Movie {
+    id?: number;
+    title: string;
+    poster_path: string;
+    overview: string;
+    vote_average: number;
+}
+
+interface Props {
+    data: Movie;
+}
+
+const ElementCatalog: FC<Props> = ({data}) => {
     const ImagesApi = "https://image.tmdb.org/t/p/w500";
     return (
         <>
@@ -9,17 +21,17 @@ const Movie = ({title, poster_path}: Movies) => {
             <a href=''>
                 <span>
                     <img
-                    src={ImagesApi + poster_path}
-                    alt={title}
+                    src={ImagesApi + data.poster_path}
+                    alt={data.title}
                     />
                 </span>
             </a>
             <div className="Main-container__movie-info">
-                <h3>{title}</h3>
+                <h3>{data.title}</h3>
             </div>
         </div>
     </>
     )
 }
 
-export default Movie
+export default ElementCatalog

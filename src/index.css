@@ -143,8 +143,8 @@ button:hover {
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1440px) {
-  
+@media (min-width: 1025px) {
+
   #root {
     display: flex;
     flex-direction: column;

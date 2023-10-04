@@ -18,7 +18,7 @@ const Header = ({ brand }: { brand: string }) => {
         </button>
         <nav className='Menu'>
               <ul className={isNavExpanded ? 'Menu__Items Menu--expanded' : 'Menu__Items'}>
-                  <li className='Menu__Inside'><Link to={'/home'} id="home">Home</Link></li>
+                  <li className='Menu__Inside'><Link to={'/'} id="home">Home</Link></li>
                   <li className='Menu__Inside'><Link to={'/new'} id="new">New</Link></li>
                   <li className='Menu__Inside'><Link to={'/category'} id="category">Category</Link></li>
                   <li className='Menu__Inside'><Link to={'/help'} id="help">Help</Link></li>

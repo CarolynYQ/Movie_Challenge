@@ -1,8 +1,9 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Splash from './pages/Splash.tsx'
-import ErrorPage from './pages/ErrorPage.tsx'
-import Catalog from './pages/Catalog.tsx'
-import './styled-components/Splash.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { DataProvider } from './context/DataContext.tsx';
+import Splash from './pages/Splash.tsx';
+import ErrorPage from './pages/ErrorPage.tsx';
+import Catalog from './pages/Catalog.tsx';
+import './styled-components/Splash.css';
 
 
 function App() {
@@ -21,7 +22,9 @@ function App() {
 
   return (
     <>
-    <RouterProvider router={router} />
+      <DataProvider>
+        <RouterProvider router={router} />
+      </DataProvider>
     </>
   )
 }
