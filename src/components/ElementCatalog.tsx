@@ -25,8 +25,7 @@ const ElementCatalog: FC<Props> = ({data}) => {
     const cover = data.poster_path === null ? DefaultImage : IMAGE_API + data.poster_path;
     return (
         <>
-        <Link to={`${data.id}`}>
-        <div className='Main-container__movie'>
+        <div className='Main-container__movie' onClick={viewItem}>
             <span>
                 <img
                 className='Main-container__poster'
@@ -38,7 +37,6 @@ const ElementCatalog: FC<Props> = ({data}) => {
                 <h3>{data.original_title}</h3>
             </div>
         </div>
-        </Link>
     </>
     )
 }
